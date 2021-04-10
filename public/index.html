@@ -5,6 +5,8 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+	
     <meta
       name="description"
       content="Web site created using create-react-app"
@@ -29,12 +31,13 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
+
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL.json", {onProgress: UnityProgress});
     </script>
-	<script src="https://webgazer.cs.brown.edu/webgazer.js?" defer> </script>
+		<script src="https://api.gazerecorder.com/GazeCloudAPI.js" defer></script>
 	<script src="theGaze.js" defer> </script>
-	<script src="consoleSaver.js" defer> </script>
+	<script src="heatmapLive" defer> </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -50,7 +53,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div id="unityContainer" style="width: 960px; height: 600px;"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
@@ -58,4 +61,5 @@
       </div>
     </div>
   </body>
+
 </html>
